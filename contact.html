@@ -2,67 +2,69 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kontakt</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e3a8a);
-  color: white;
-  text-align: center;
-}
-
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: rgba(15,23,42,0.9);
-  padding: 15px;
-}
-
-nav a {
-  color: white;
-  margin: 0 20px;
-  text-decoration: none;
-}
-
-.container {
-  margin-top: 120px;
-}
-
-.box {
-  background: rgba(255,255,255,0.05);
-  padding: 30px;
-  border-radius: 15px;
-  display: inline-block;
-}
-
-a {
-  color: #38bdf8;
-}
-</style>
+<title>Kontakt - Stream Integrity</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav>
+<div class="navbar">
   <a href="index.html">Home</a>
   <a href="about.html">Über uns</a>
   <a href="analysis.html">Analyse</a>
   <a href="contact.html">Kontakt</a>
-</nav>
+</div>
 
-<div class="container">
+<div class="section">
 
   <h1>Kontakt</h1>
+  <p style="color:#94a3b8; margin-top:10px;">
+    Haben Sie Fragen oder möchten Sie mit uns zusammenarbeiten?  
+    Wir freuen uns auf Ihre Nachricht.
+  </p>
 
-  <div class="box">
-    <p>Email:</p>
-    <p><a href="mailto:stream.integrity.review@proton.me">
-      stream.integrity.review@proton.me
-    </a></p>
+  <!-- Kontakt Card -->
+  <div class="card" style="margin:40px auto; max-width:400px;">
+
+    <h3>Email</h3>
+    <p>
+      <a href="mailto:stream.integrity.review@proton.me" style="color:#38bdf8;">
+        stream.integrity.review@proton.me
+      </a>
+    </p>
+
+    <hr style="margin:20px 0; border:0; border-top:1px solid rgba(255,255,255,0.1);">
+
+    <p style="font-size:0.9rem; color:#94a3b8;">
+      Antwortzeit: innerhalb von 24 Stunden
+    </p>
+
+  </div>
+
+</div>
+
+<!-- EXTRA SECTION -->
+<div class="section">
+
+  <h2>Warum Stream Integrity?</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Schnelle Analyse</h3>
+      <p>Ergebnisse in Echtzeit durch KI-basierte Systeme.</p>
+    </div>
+
+    <div class="card">
+      <h3>Verlässliche Daten</h3>
+      <p>Erkennung von Bots, Fake-Views und Manipulation.</p>
+    </div>
+
+    <div class="card">
+      <h3>Diskret & Sicher</h3>
+      <p>Ihre Daten werden vertraulich und sicher behandelt.</p>
+    </div>
+
   </div>
 
 </div>
