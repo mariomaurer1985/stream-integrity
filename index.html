@@ -9,26 +9,29 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  background: linear-gradient(135deg, #020617, #1e3a8a);
   color: white;
 }
 
+/* NAVBAR */
 nav {
   position: fixed;
   width: 100%;
   top: 0;
-  background: rgba(15,23,42,0.9);
-  padding: 15px;
+  background: rgba(2,6,23,0.9);
+  padding: 20px;
   text-align: center;
   backdrop-filter: blur(10px);
 }
 
 nav a {
   color: white;
-  margin: 0 20px;
+  margin: 0 25px;
   text-decoration: none;
+  font-weight: 500;
 }
 
+/* HERO */
 .hero {
   height: 100vh;
   display: flex;
@@ -39,25 +42,27 @@ nav a {
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: 4.5rem;
 }
 
 .hero p {
   color: #94a3b8;
   margin: 20px 0;
+  max-width: 600px;
 }
 
 .btn {
-  background: #38bdf8;
-  padding: 12px 30px;
-  border-radius: 10px;
-  color: black;
+  background: linear-gradient(45deg, #38bdf8, #22c55e);
+  padding: 14px 35px;
+  border-radius: 12px;
   text-decoration: none;
+  color: black;
   font-weight: bold;
 }
 
+/* FEATURES */
 .section {
-  padding: 80px 20px;
+  padding: 100px 20px;
   text-align: center;
 }
 
@@ -70,9 +75,62 @@ nav a {
 
 .card {
   background: rgba(255,255,255,0.05);
-  padding: 25px;
-  border-radius: 15px;
-  width: 250px;
+  padding: 30px;
+  border-radius: 20px;
+  width: 260px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* IMAGE SECTION */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 80px 40px;
+}
+
+.split img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.split-text {
+  padding: 20px;
+}
+
+.split-text h2 {
+  font-size: 2.5rem;
+}
+
+.split-text p {
+  color: #94a3b8;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 80px 20px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat h2 {
+  font-size: 2.5rem;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #94a3b8;
 }
 </style>
 </head>
@@ -86,20 +144,57 @@ nav a {
   <a href="contact.html">Kontakt</a>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <h1>Stream Integrity</h1>
-  <p>KI-gestützte Analyse von Streaming-Daten</p>
-  <a href="analysis.html" class="btn">Live Analyse</a>
+  <p>
+    Die nächste Generation der KI-gestützten Streaming-Analyse.
+    Erkennen Sie Bots, Fake-Views und Manipulation in Echtzeit.
+  </p>
+  <a href="analysis.html" class="btn">Live Analyse starten</a>
 </div>
 
+<!-- FEATURES -->
 <div class="section">
-  <h2>Unsere Leistungen</h2>
+  <h2>Was wir bieten</h2>
   <div class="cards">
-    <div class="card">Bot Detection</div>
-    <div class="card">Traffic Analyse</div>
-    <div class="card">Manipulationsschutz</div>
+    <div class="card">🤖 Bot Detection</div>
+    <div class="card">📊 Datenanalyse</div>
+    <div class="card">⚡ Echtzeit Monitoring</div>
   </div>
 </div>
+
+<!-- SPLIT SECTION -->
+<div class="split">
+  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+  <div class="split-text">
+    <h2>KI-basierte Analyse</h2>
+    <p>
+      Unsere Systeme erkennen verdächtige Aktivitäten sofort
+      und liefern präzise Insights für maximale Transparenz.
+    </p>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <h2>99%</h2>
+    <p>Erkennungsrate</p>
+  </div>
+  <div class="stat">
+    <h2>24/7</h2>
+    <p>Monitoring</p>
+  </div>
+  <div class="stat">
+    <h2>AI</h2>
+    <p>Technologie</p>
+  </div>
+</div>
+
+<footer>
+  © 2026 Stream Integrity – Alle Rechte vorbehalten
+</footer>
 
 </body>
 </html>
