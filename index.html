@@ -15,12 +15,11 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #0b1220;
+    background: #020617;
     color: white;
-    overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* NAV */
 .nav {
     position: fixed;
     width: 100%;
@@ -34,41 +33,62 @@ body {
     z-index: 1000;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-box {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
 .nav a {
     color: #94a3b8;
     margin-left: 20px;
     text-decoration: none;
-    font-size: 14px;
 }
 
 /* HERO */
 .hero {
     padding: 180px 20px 120px;
     text-align: center;
-    background: linear-gradient(135deg, #1e3a8a, #020617);
+    background: radial-gradient(circle at top, #1e3a8a, #020617);
 }
 
 .hero h1 {
-    font-size: 3.5em;
-    margin-bottom: 20px;
+    font-size: 3.8em;
+    text-shadow: 0 0 25px rgba(59,130,246,0.5);
 }
 
 .hero p {
+    margin-top: 20px;
     max-width: 700px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     color: #cbd5f5;
-    line-height: 1.6;
 }
 
 .button {
-    display: inline-block;
     margin-top: 30px;
-    background: #3b82f6;
+    display: inline-block;
     padding: 14px 30px;
     border-radius: 10px;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
     text-decoration: none;
     color: white;
-    font-weight: 500;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
 }
 
 /* SECTION */
@@ -76,10 +96,6 @@ body {
     padding: 100px 20px;
     max-width: 1100px;
     margin: auto;
-}
-
-.section h2 {
-    margin-bottom: 20px;
 }
 
 /* GRID */
@@ -97,7 +113,7 @@ body {
     border: 1px solid #1e293b;
 }
 
-/* DASHBOARD */
+/* STATS */
 .big {
     font-size: 1.8em;
     margin-top: 10px;
@@ -113,18 +129,14 @@ body {
 /* FOOTER */
 .footer {
     text-align: center;
-    padding: 50px;
+    padding: 60px;
     color: #64748b;
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
-    .nav {
-        padding: 15px 20px;
-    }
-
     .hero h1 {
-        font-size: 2.2em;
+        font-size: 2.3em;
     }
 }
 </style>
@@ -133,30 +145,44 @@ body {
 
 <body>
 
+<!-- NAV -->
+
 <div class="nav">
-    <div><strong>Stream Integrity</strong></div>
-    <div>
-        <a href="#about">Über uns</a>
-        <a href="#services">Leistungen</a>
-        <a href="#dashboard">Analyse</a>
-        <a href="#contact">Kontakt</a>
+    <div class="logo">
+        <div class="logo-box">SI</div>
+        <strong>Stream Integrity</strong>
     </div>
+
+```
+<div>
+    <a href="#about">Über uns</a>
+    <a href="#services">Leistungen</a>
+    <a href="#tech">Technologie</a>
+    <a href="#dashboard">Analyse</a>
+    <a href="#contact">Kontakt</a>
 </div>
+```
+
+</div>
+
+<!-- HERO -->
 
 <div class="hero">
     <h1>Stream Integrity</h1>
     <p>
-        KI-gestützte Analyse von Streaming-Daten zur Erkennung von Bots,
-        Fake-Views und Manipulation auf digitalen Plattformen.
+        KI-gestützte Analyseplattform zur Erkennung von Bot-Netzwerken,
+        Fake-Views und manipulierter Reichweite in digitalen Streams.
     </p>
-    <a href="#dashboard" class="button">Analyse ansehen</a>
+    <a href="#dashboard" class="button">Live Analyse ansehen</a>
 </div>
+
+<!-- ABOUT -->
 
 <div class="section" id="about">
     <h2>Über uns</h2>
     <p>
-        Stream Integrity ist eine unabhängige Plattform zur Analyse von Streaming-Daten.
-        Unser Ziel ist es, Transparenz zu schaffen und künstliche Reichweiten zu identifizieren.
+        Stream Integrity ist eine unabhängige Analyseplattform für digitale Streaming-Daten.
+        Unser Ziel ist es, Transparenz zu schaffen und künstliche Reichweiten systematisch zu identifizieren.
     </p>
 
 ```
@@ -167,39 +193,58 @@ body {
 
 </div>
 
+<!-- SERVICES -->
+
 <div class="section" id="services">
     <h2>Leistungen</h2>
 
 ```
 <div class="grid">
     <div class="card">
-        <h3>Bot-Erkennung</h3>
-        <p>Automatisierte Systeme zur Identifikation von Fake-Traffic.</p>
+        <h3>Bot Detection</h3>
+        <p>Erkennung automatisierter Zugriffe durch Verhaltensanalyse.</p>
     </div>
 
     <div class="card">
-        <h3>KI-Analyse</h3>
-        <p>Erkennung komplexer Muster mit Machine Learning.</p>
+        <h3>Traffic Analyse</h3>
+        <p>Untersuchung von Zuschauerstrukturen und Anomalien.</p>
     </div>
 
     <div class="card">
         <h3>Reporting</h3>
-        <p>Strukturierte Berichte für Plattformen und Partner.</p>
+        <p>Detaillierte Berichte zur Bewertung von Streaming-Daten.</p>
     </div>
 
     <div class="card">
         <h3>Monitoring</h3>
-        <p>Kontinuierliche Überwachung von Datenströmen.</p>
+        <p>Kontinuierliche Überwachung in Echtzeit.</p>
     </div>
 </div>
 ```
 
 </div>
 
+<!-- TECH -->
+
+<div class="section" id="tech">
+    <h2>Technologie</h2>
+    <p>
+        Unsere Systeme kombinieren Machine Learning, statistische Modelle und Mustererkennung,
+        um verdächtige Aktivitäten in Echtzeit zu identifizieren.
+    </p>
+
+```
+<div class="image">
+    <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296">
+</div>
+```
+
+</div>
+
+<!-- DASHBOARD -->
+
 <div class="section" id="dashboard">
-    <div class="section" id="dashboard">
     <h2>Live Analyse Dashboard</h2>
-    <p style="color:#94a3b8;">Echtzeit-Auswertung von Streaming-Daten (Simulation)</p>
 
 ```
 <div class="grid">
@@ -209,13 +254,13 @@ body {
     </div>
 
     <div class="card">
-        <h3>Verdächtige Aktivität</h3>
-        <div class="big" id="suspicious">0%</div>
+        <h3>Bot Traffic</h3>
+        <div class="big" id="bots">0</div>
     </div>
 
     <div class="card">
-        <h3>Bot Traffic</h3>
-        <div class="big" id="bots">0</div>
+        <h3>Verdächtig</h3>
+        <div class="big" id="suspicious">0%</div>
     </div>
 
     <div class="card">
@@ -223,101 +268,41 @@ body {
         <div class="big" id="real">0</div>
     </div>
 </div>
-
-<canvas id="chart" style="margin-top:40px;"></canvas>
 ```
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-let views = 1000000;
-let bots = 200000;
-let suspicious = 15;
-
-setInterval(() => {
-    views += Math.floor(Math.random()*500);
-    bots += Math.floor(Math.random()*50);
-    suspicious = (bots / views * 100).toFixed(1);
-
-    document.getElementById("views").innerText = views.toLocaleString();
-    document.getElementById("bots").innerText = bots.toLocaleString();
-    document.getElementById("suspicious").innerText = suspicious + "%";
-    document.getElementById("real").innerText = (views - bots).toLocaleString();
-
-    chart.data.datasets[0].data.push(views);
-    chart.data.labels.push("");
-    if(chart.data.labels.length > 20){
-        chart.data.labels.shift();
-        chart.data.datasets[0].data.shift();
-    }
-    chart.update();
-}, 2000);
-
-const ctx = document.getElementById('chart').getContext('2d');
-const chart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: [],
-        datasets: [{
-            label: 'Views',
-            data: [],
-            borderColor: '#3b82f6',
-            tension: 0.3
-        }]
-    },
-    options: {
-        plugins: {
-            legend: { display: false }
-        },
-        scales: {
-            x: { display: false },
-            y: { ticks: { color: '#94a3b8' } }
-        }
-    }
-});
-</script>
-
-
-```
-<div class="grid">
-    <div class="card">
-        <h3>Gesamt Views</h3>
-        <div class="big">1,284,332</div>
-    </div>
-
-    <div class="card">
-        <h3>Verdächtig</h3>
-        <div class="big">23%</div>
-    </div>
-
-    <div class="card">
-        <h3>Bot Traffic</h3>
-        <div class="big">312,991</div>
-    </div>
-
-    <div class="card">
-        <h3>Echte Nutzer</h3>
-        <div class="big">971,341</div>
-    </div>
-</div>
-
-<div class="image">
-    <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296">
-</div>
-```
-
-</div>
+<!-- CONTACT -->
 
 <div class="section" id="contact">
     <h2>Kontakt</h2>
     <p>stream.integrity.review@proton.me</p>
 </div>
 
+<!-- FOOTER -->
+
 <div class="footer">
     © 2026 Stream Integrity
 </div>
+
+<!-- SCRIPT -->
+
+<script>
+let views = 1000000;
+let bots = 200000;
+
+setInterval(() => {
+    views += Math.floor(Math.random()*500);
+    bots += Math.floor(Math.random()*50);
+
+    let suspicious = (bots / views * 100).toFixed(1);
+
+    document.getElementById("views").innerText = views.toLocaleString();
+    document.getElementById("bots").innerText = bots.toLocaleString();
+    document.getElementById("real").innerText = (views - bots).toLocaleString();
+    document.getElementById("suspicious").innerText = suspicious + "%";
+}, 2000);
+</script>
 
 </body>
 </html>
