@@ -9,7 +9,7 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     background: linear-gradient(135deg, #0f172a, #1e3a8a);
     color: white;
 }
@@ -19,6 +19,10 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    background: rgba(15,23,42,0.8);
+    backdrop-filter: blur(10px);
 }
 
 .nav h2 {
@@ -26,15 +30,16 @@ body {
 }
 
 .nav a {
-    color: #94a3b8;
-    margin-left: 20px;
+    color: #cbd5f5;
+    margin-left: 25px;
     text-decoration: none;
+    font-size: 0.9em;
 }
 
 /* HERO */
 .hero {
     text-align: center;
-    padding: 120px 20px;
+    padding: 120px 20px 80px;
 }
 
 .hero h1 {
@@ -50,21 +55,62 @@ body {
 
 .button {
     background: #3b82f6;
-    padding: 12px 25px;
-    border-radius: 8px;
+    padding: 14px 30px;
+    border-radius: 10px;
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
 }
 
-/* SECTION */
+.button:hover {
+    background: #2563eb;
+}
+
+/* SECTIONS */
 .section {
     padding: 80px 20px;
+    max-width: 900px;
+    margin: auto;
     text-align: center;
 }
 
 .section h2 {
     margin-bottom: 20px;
+}
+
+.section p {
+    color: #cbd5f5;
+    line-height: 1.6;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 12px;
+    width: 250px;
+    backdrop-filter: blur(5px);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #94a3b8;
+    font-size: 0.9em;
 }
 </style>
 
@@ -75,28 +121,60 @@ body {
 <div class="nav">
     <h2>Stream Integrity</h2>
     <div>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
     </div>
 </div>
 
 <div class="hero">
     <h1>Stream Integrity</h1>
-    <p>Independent stream data analysis</p>
-    <a href="#" class="button">Get Started</a>
+    <p>Detecting fraud, bots and manipulation in streaming data</p>
+    <a href="#contact" class="button">Get in Touch</a>
 </div>
 
-<div class="section">
+<div class="section" id="about">
     <h2>About</h2>
-    <p>We analyze streaming data to detect anomalies, bots, and manipulation.</p>
+    <p>
+        Stream Integrity provides independent analysis of streaming platforms.
+        We identify anomalies, detect bot activity, and ensure transparency
+        in digital media ecosystems.
+    </p>
 </div>
 
-<div class="section">
-    <h2>Mission</h2>
-    <p>Creating transparency and trust in digital streaming platforms.</p>
+<div class="section" id="features">
+    <h2>What We Do</h2>
+
+```
+<div class="cards">
+    <div class="card">
+        <h3>Bot Detection</h3>
+        <p>Identify artificial traffic and fake engagement patterns.</p>
+    </div>
+
+    <div class="card">
+        <h3>Data Analysis</h3>
+        <p>Deep analysis of streaming metrics and behavior anomalies.</p>
+    </div>
+
+    <div class="card">
+        <h3>Transparency</h3>
+        <p>Bringing trust back into streaming ecosystems.</p>
+    </div>
+</div>
+```
+
+</div>
+
+<div class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Interested in working together or have questions?</p>
+    <p><strong>Email:</strong> contact@stream-integrity.com</p>
+</div>
+
+<div class="footer">
+    © 2026 Stream Integrity — All rights reserved
 </div>
 
 </body>
 </html>
-
