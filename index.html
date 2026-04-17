@@ -6,32 +6,98 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stream Integrity</title>
 
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
-
 <style>
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     background: #0b1220;
     color: white;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(2,6,23,0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.nav a {
+    color: #94a3b8;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    padding: 160px 20px 100px;
     text-align: center;
+    background: linear-gradient(135deg, #1e3a8a, #020617);
+}
+
+.hero h1 {
+    font-size: 3.8em;
+}
+
+.hero p {
+    color: #cbd5f5;
+    max-width: 700px;
+    margin: auto;
 }
 
 .button {
+    margin-top: 30px;
     background: #3b82f6;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
+    padding: 14px 30px;
+    border-radius: 10px;
     display: inline-block;
+    color: white;
+    text-decoration: none;
 }
 
-input {
-    padding: 10px;
-    margin: 10px;
+/* SECTION */
+.section {
+    padding: 100px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 25px;
+}
+
+/* CARD */
+.card {
+    background: #020617;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #1e293b;
+}
+
+/* DASHBOARD */
+.big {
+    font-size: 1.8em;
+    margin-top: 10px;
+}
+
+/* IMAGE */
+.image img {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 50px;
+    color: #64748b;
 }
 </style>
 
@@ -39,55 +105,112 @@ input {
 
 <body>
 
-<h1>Stream Integrity</h1>
-
-<div id="login">
-    <h2>Login</h2>
-    <input id="email" placeholder="Email"><br>
-    <input id="password" type="password" placeholder="Passwort"><br>
-    <div class="button" onclick="login()">Einloggen</div>
+<div class="nav">
+    <div><strong>Stream Integrity</strong></div>
+    <div>
+        <a href="#about">Über uns</a>
+        <a href="#services">Leistungen</a>
+        <a href="#dashboard">Analyse</a>
+        <a href="#contact">Kontakt</a>
+    </div>
 </div>
 
-<div id="dashboard" style="display:none;">
-    <h2>Dashboard</h2>
-    <p>Views: <span id="views"></span></p>
-    <p>Bots: <span id="bots"></span></p>
+<div class="hero">
+    <h1>Stream Integrity</h1>
+    <p>
+        KI-gestützte Analyse von Streaming-Daten zur Erkennung von Bots,
+        Fake-Views und Manipulation.
+    </p>
+    <a href="#dashboard" class="button">Analyse ansehen</a>
 </div>
 
-<script>
-// 🔴 HIER DEINE FIREBASE DATEN EINSETZEN
-const firebaseConfig = {
-  apiKey: "DEIN_KEY",
-  authDomain: "DEIN_DOMAIN",
-  projectId: "DEIN_ID"
-};
+<div class="section" id="about">
+    <h2>Über uns</h2>
+    <p>
+        Stream Integrity ist eine unabhängige Analyseplattform, die sich auf die
+        Untersuchung von Streaming-Daten spezialisiert hat. Unser Fokus liegt auf
+        der Identifikation von künstlicher Reichweite und betrügerischem Verhalten.
+    </p>
 
-firebase.initializeApp(firebaseConfig);
+```
+<div class="image">
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+</div>
+```
 
-const auth = firebase.auth();
-const db = firebase.firestore();
+</div>
 
-function login() {
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
+<div class="section" id="services">
+    <h2>Unsere Leistungen</h2>
 
-    auth.signInWithEmailAndPassword(email, password)
-    .then(() => {
-        document.getElementById("login").style.display = "none";
-        document.getElementById("dashboard").style.display = "block";
-        loadData();
-    })
-    .catch(err => alert(err.message));
-}
+```
+<div class="grid">
+    <div class="card">
+        <h3>Bot-Erkennung</h3>
+        <p>Analyse und Identifikation automatisierter Zugriffe.</p>
+    </div>
 
-function loadData() {
-    db.collection("stats").doc("main").get().then(doc => {
-        let data = doc.data();
-        document.getElementById("views").innerText = data.views;
-        document.getElementById("bots").innerText = data.bots;
-    });
-}
-</script>
+    <div class="card">
+        <h3>KI-Analyse</h3>
+        <p>Erkennung komplexer Muster und Auffälligkeiten.</p>
+    </div>
+
+    <div class="card">
+        <h3>Reporting</h3>
+        <p>Detaillierte Berichte über Reichweite und Traffic.</p>
+    </div>
+
+    <div class="card">
+        <h3>Monitoring</h3>
+        <p>Kontinuierliche Überwachung von Streaming-Daten.</p>
+    </div>
+</div>
+```
+
+</div>
+
+<div class="section" id="dashboard">
+    <h2>Analyse Dashboard</h2>
+
+```
+<div class="grid">
+    <div class="card">
+        <h3>Gesamt Views</h3>
+        <div class="big">1,284,332</div>
+    </div>
+
+    <div class="card">
+        <h3>Verdächtige Aktivität</h3>
+        <div class="big">23%</div>
+    </div>
+
+    <div class="card">
+        <h3>Bot Traffic</h3>
+        <div class="big">312,991</div>
+    </div>
+
+    <div class="card">
+        <h3>Echte Nutzer</h3>
+        <div class="big">971,341</div>
+    </div>
+</div>
+
+<div class="image">
+    <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296">
+</div>
+```
+
+</div>
+
+<div class="section" id="contact">
+    <h2>Kontakt</h2>
+    <p>stream.integrity.review@proton.me</p>
+</div>
+
+<div class="footer">
+    © 2026 Stream Integrity <br>
+    Impressum | Datenschutz
+</div>
 
 </body>
 </html>
