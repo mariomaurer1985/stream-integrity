@@ -1,200 +1,116 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stream Integrity</title>
+    <meta charset="UTF-8">
+    <title>Mein Stream</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #020617, #1e3a8a);
-  color: white;
-}
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
 
-/* NAVBAR */
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: rgba(2,6,23,0.9);
-  padding: 20px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-}
+        nav {
+            background: #1e293b;
+            padding: 15px;
+            text-align: center;
+        }
 
-nav a {
-  color: white;
-  margin: 0 25px;
-  text-decoration: none;
-  font-weight: 500;
-}
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+        nav a:hover {
+            color: #22c55e;
+        }
 
-.hero h1 {
-  font-size: 4.5rem;
-}
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+        }
 
-.hero p {
-  color: #94a3b8;
-  margin: 20px 0;
-  max-width: 600px;
-}
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
 
-.btn {
-  background: linear-gradient(45deg, #38bdf8, #22c55e);
-  padding: 14px 35px;
-  border-radius: 12px;
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
+        .hero p {
+            font-size: 18px;
+            color: #94a3b8;
+        }
 
-/* FEATURES */
-.section {
-  padding: 100px 20px;
-  text-align: center;
-}
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #22c55e;
+            color: black;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
 
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
+        .button:hover {
+            background: #16a34a;
+        }
 
-.card {
-  background: rgba(255,255,255,0.05);
-  padding: 30px;
-  border-radius: 20px;
-  width: 260px;
-  transition: 0.3s;
-}
+        .section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
 
-.card:hover {
-  transform: translateY(-10px);
-}
-
-/* IMAGE SECTION */
-.split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  padding: 80px 40px;
-}
-
-.split img {
-  width: 100%;
-  border-radius: 20px;
-}
-
-.split-text {
-  padding: 20px;
-}
-
-.split-text h2 {
-  font-size: 2.5rem;
-}
-
-.split-text p {
-  color: #94a3b8;
-}
-
-/* STATS */
-.stats {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  padding: 80px 20px;
-}
-
-.stat {
-  text-align: center;
-}
-
-.stat h2 {
-  font-size: 2.5rem;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 40px;
-  color: #94a3b8;
-}
-</style>
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">Über uns</a>
-  <a href="analysis.html">Analyse</a>
-  <a href="contact.html">Kontakt</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">Über mich</a>
+    <a href="analysis.html">Analyse</a>
+    <a href="contact.html">Kontakt</a>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-  <h1>Stream Integrity</h1>
-  <p>
-    Die nächste Generation der KI-gestützten Streaming-Analyse.
-    Erkennen Sie Bots, Fake-Views und Manipulation in Echtzeit.
-  </p>
-  <a href="analysis.html" class="btn">Live Analyse starten</a>
+    <h1>Willkommen auf meinem Stream</h1>
+    <p>Kein Geschrei. Kein Fake. Einfach ich.</p>
+
+    <a class="button" href="https://twitch.tv/DEINNAME" target="_blank">
+        Live anschauen
+    </a>
 </div>
 
-<!-- FEATURES -->
 <div class="section">
-  <h2>Was wir bieten</h2>
-  <div class="cards">
-    <div class="card">🤖 Bot Detection</div>
-    <div class="card">📊 Datenanalyse</div>
-    <div class="card">⚡ Echtzeit Monitoring</div>
-  </div>
-</div>
 
-<!-- SPLIT SECTION -->
-<div class="split">
-  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
-  <div class="split-text">
-    <h2>KI-basierte Analyse</h2>
-    <p>
-      Unsere Systeme erkennen verdächtige Aktivitäten sofort
-      und liefern präzise Insights für maximale Transparenz.
-    </p>
-  </div>
-</div>
+    <div class="card">
+        <h2>Wer ich bin</h2>
+        <p>
+            Ich bin ein ruhiger Streamer aus Österreich 🇦🇹  
+            Ich spiele hauptsächlich Hunt Showdown und rede einfach so wie ich bin.
+        </p>
+    </div>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stat">
-    <h2>99%</h2>
-    <p>Erkennungsrate</p>
-  </div>
-  <div class="stat">
-    <h2>24/7</h2>
-    <p>Monitoring</p>
-  </div>
-  <div class="stat">
-    <h2>AI</h2>
-    <p>Technologie</p>
-  </div>
-</div>
+    <div class="card">
+        <h2>Was dich erwartet</h2>
+        <p>
+            Ehrlicher Content, entspannte Streams und kein übertriebenes Verhalten.  
+            Wenn du auf ruhige Streams stehst, bist du hier richtig.
+        </p>
+    </div>
 
-<footer>
-  © 2026 Stream Integrity – Alle Rechte vorbehalten
-</footer>
+</div>
 
 </body>
 </html>
