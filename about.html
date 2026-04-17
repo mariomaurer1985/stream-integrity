@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Über uns</title>
+<title>Über uns - Stream Integrity</title>
 
 <style>
 body {
@@ -11,7 +11,6 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #0f172a, #1e3a8a);
   color: white;
-  text-align: center;
 }
 
 nav {
@@ -20,6 +19,8 @@ nav {
   top: 0;
   background: rgba(15,23,42,0.9);
   padding: 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
 }
 
 nav a {
@@ -28,14 +29,75 @@ nav a {
   text-decoration: none;
 }
 
-.container {
-  margin-top: 120px;
-  padding: 20px;
+/* HERO */
+.hero {
+  margin-top: 80px;
+  padding: 80px 20px;
+  text-align: center;
 }
 
-p {
+.hero h1 {
+  font-size: 3.5rem;
+}
+
+.hero p {
+  color: #94a3b8;
   max-width: 700px;
   margin: auto;
+}
+
+/* GRID SECTION */
+.section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #94a3b8;
+}
+
+/* IMAGE */
+.img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat h2 {
+  font-size: 2rem;
+}
+
+.stat p {
   color: #94a3b8;
 }
 </style>
@@ -50,28 +112,60 @@ p {
   <a href="contact.html">Kontakt</a>
 </nav>
 
-<div class="container">
-  <h1>Über uns</h1>
+<div class="hero">
+  <h1>Über Stream Integrity</h1>
+  <p>
+    Wir entwickeln KI-gestützte Systeme zur Analyse von Streaming-Daten,
+    um Manipulation, Bots und Fake-Engagement in Echtzeit zu erkennen.
+  </p>
+</div>
 
-<p>
-Stream Integrity ist ein technologieorientiertes Unternehmen, das sich auf die Analyse und Sicherstellung der Datenintegrität in digitalen Streaming-Ökosystemen spezialisiert hat.
-</p>
+<div class="section">
 
-<p>
-Unsere Plattform nutzt moderne KI-Algorithmen, um in Echtzeit verdächtige Aktivitäten, Bot-Netzwerke und künstlich generierte Interaktionen zu erkennen.
-</p>
+  <div class="grid">
+    
+    <div>
+      <img class="img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+    </div>
 
-<p>
-In einer Zeit, in der digitale Reichweite direkten Einfluss auf wirtschaftlichen Erfolg hat, schaffen wir Transparenz und Vertrauen durch präzise Datenanalysen.
-</p>
+    <div class="card">
+      <h3>Unsere Technologie</h3>
+      <p>
+        Unsere Plattform nutzt moderne Machine-Learning-Algorithmen,
+        um ungewöhnliche Muster im Datenverkehr zu erkennen.
+      </p>
+    </div>
 
-<p>
-Unser Ziel ist es, Streaming-Plattformen, Content-Creators und Unternehmen eine zuverlässige Grundlage für echte Performance-Messung zu bieten.
-</p>
+    <div class="card">
+      <h3>Unsere Mission</h3>
+      <p>
+        Transparenz im Streaming schaffen und Unternehmen dabei helfen,
+        echte Performance von künstlicher Manipulation zu unterscheiden.
+      </p>
+    </div>
 
-<p>
-Stream Integrity steht für Innovation, Sicherheit und datenbasierte Entscheidungen.
-</p>
+    <div>
+      <img class="img" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+    </div>
+
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <h2>99%</h2>
+      <p>Erkennungsrate</p>
+    </div>
+    <div class="stat">
+      <h2>24/7</h2>
+      <p>Analyse</p>
+    </div>
+    <div class="stat">
+      <h2>AI</h2>
+      <p>Technologie</p>
+    </div>
+  </div>
+
+</div>
 
 </body>
 </html>
