@@ -1,1 +1,21 @@
 
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Über uns</title>
+</head>
+<body style="background:#020617;color:white;font-family:sans-serif">
+
+<h1>Über uns</h1>
+
+<p>
+Stream Integrity analysiert Streaming-Daten mit KI,
+um Fake-Views und Bot-Netzwerke zu erkennen.
+</p>
+
+<a href="index.html">Zurück</a>
+
+</body>
+</html>
