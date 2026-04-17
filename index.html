@@ -6,100 +6,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stream Integrity</title>
 
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+
 <style>
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #0f172a;
+    font-family: sans-serif;
+    background: #0b1220;
     color: white;
-}
-
-/* NAV */
-.nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-    background: #020617;
-}
-
-.nav a {
-    color: #94a3b8;
-    margin-left: 20px;
-    text-decoration: none;
-}
-
-/* HERO */
-.hero {
     text-align: center;
-    padding: 120px 20px 80px;
-    background: linear-gradient(135deg, #1e3a8a, #0f172a);
-}
-
-.hero h1 {
-    font-size: 3.5em;
 }
 
 .button {
-    margin-top: 25px;
     background: #3b82f6;
-    padding: 12px 28px;
-    border-radius: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
     display: inline-block;
-    color: white;
-    text-decoration: none;
 }
 
-/* DASHBOARD */
-.dashboard {
-    padding: 60px 20px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: #020617;
-    padding: 25px;
-    border-radius: 15px;
-    border: 1px solid #1e293b;
-}
-
-.card h3 {
-    margin: 0;
-    font-size: 1.2em;
-    color: #94a3b8;
-}
-
-.big {
-    font-size: 2em;
-    margin-top: 10px;
-}
-
-/* FAKE CHART */
-.chart {
-    margin-top: 40px;
-    height: 200px;
-    background: linear-gradient(to top, #3b82f6, transparent);
-    border-radius: 10px;
-    opacity: 0.6;
-}
-
-/* CONTACT */
-.contact {
-    text-align: center;
-    padding: 80px 20px;
-}
-
-/* FOOTER */
-.footer {
-    text-align: center;
-    padding: 40px;
-    color: #64748b;
+input {
+    padding: 10px;
+    margin: 10px;
 }
 </style>
 
@@ -107,61 +39,55 @@ body {
 
 <body>
 
-<div class="nav">
-    <div><strong>Stream Integrity</strong></div>
-    <div>
-        <a href="#">Dashboard</a>
-        <a href="#">Analyse</a>
-        <a href="#">Kontakt</a>
-    </div>
+<h1>Stream Integrity</h1>
+
+<div id="login">
+    <h2>Login</h2>
+    <input id="email" placeholder="Email"><br>
+    <input id="password" type="password" placeholder="Passwort"><br>
+    <div class="button" onclick="login()">Einloggen</div>
 </div>
 
-<div class="hero">
-    <h1>Stream Integrity</h1>
-    <p>Analyse & Erkennung von Streaming-Manipulation</p>
-    <a href="#dashboard" class="button">Dashboard ansehen</a>
+<div id="dashboard" style="display:none;">
+    <h2>Dashboard</h2>
+    <p>Views: <span id="views"></span></p>
+    <p>Bots: <span id="bots"></span></p>
 </div>
 
-<div class="dashboard" id="dashboard">
+<script>
+// 🔴 HIER DEINE FIREBASE DATEN EINSETZEN
+const firebaseConfig = {
+  apiKey: "DEIN_KEY",
+  authDomain: "DEIN_DOMAIN",
+  projectId: "DEIN_ID"
+};
 
-```
-<h2>Live Analyse</h2>
+firebase.initializeApp(firebaseConfig);
 
-<div class="grid">
-    <div class="card">
-        <h3>Gesamt Views</h3>
-        <div class="big">1,284,332</div>
-    </div>
+const auth = firebase.auth();
+const db = firebase.firestore();
 
-    <div class="card">
-        <h3>Verdächtige Aktivität</h3>
-        <div class="big">23%</div>
-    </div>
+function login() {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
 
-    <div class="card">
-        <h3>Bot Traffic</h3>
-        <div class="big">312,991</div>
-    </div>
+    auth.signInWithEmailAndPassword(email, password)
+    .then(() => {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
+        loadData();
+    })
+    .catch(err => alert(err.message));
+}
 
-    <div class="card">
-        <h3>Echte Nutzer</h3>
-        <div class="big">971,341</div>
-    </div>
-</div>
-
-<div class="chart"></div>
-```
-
-</div>
-
-<div class="contact">
-    <h2>Kontakt</h2>
-    <p>stream.integrity.review@proton.me</p>
-</div>
-
-<div class="footer">
-    © 2026 Stream Integrity
-</div>
+function loadData() {
+    db.collection("stats").doc("main").get().then(doc => {
+        let data = doc.data();
+        document.getElementById("views").innerText = data.views;
+        document.getElementById("bots").innerText = data.bots;
+    });
+}
+</script>
 
 </body>
 </html>
