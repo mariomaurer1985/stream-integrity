@@ -1,15 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stream Integrity</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: white;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(15,23,42,0.9);
+  padding: 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+nav a {
+  color: white;
+  margin: 0 20px;
+  text-decoration: none;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+}
+
+.hero p {
+  color: #94a3b8;
+  margin: 20px 0;
+}
+
+.btn {
+  background: #38bdf8;
+  padding: 12px 30px;
+  border-radius: 10px;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 15px;
+  width: 250px;
+}
+</style>
+</head>
+
 <body>
 
-<nav style="position:fixed; top:0; width:100%; background:#0a1a2f; padding:15px; z-index:1000;">
-  <a href="index.html" style="margin:20px; color:white;">Home</a>
-  <a href="about.html" style="margin:20px; color:white;">Über uns</a>
-  <a href="analysis.html" style="margin:20px; color:white;">Analyse</a>
-  <a href="contact.html" style="margin:20px; color:white;">Kontakt</a>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">Über uns</a>
+  <a href="analysis.html">Analyse</a>
+  <a href="contact.html">Kontakt</a>
 </nav>
 
-<div style="margin-top:100px;">
+<div class="hero">
   <h1>Stream Integrity</h1>
   <p>KI-gestützte Analyse von Streaming-Daten</p>
+  <a href="analysis.html" class="btn">Live Analyse</a>
+</div>
+
+<div class="section">
+  <h2>Unsere Leistungen</h2>
+  <div class="cards">
+    <div class="card">Bot Detection</div>
+    <div class="card">Traffic Analyse</div>
+    <div class="card">Manipulationsschutz</div>
+  </div>
 </div>
 
 </body>
+</html>
