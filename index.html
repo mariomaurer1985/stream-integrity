@@ -10,119 +10,96 @@
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    background: #0f172a;
     color: white;
-    scroll-behavior: smooth;
 }
 
-/* NAVBAR */
+/* NAV */
 .nav {
     display: flex;
     justify-content: space-between;
     padding: 20px 40px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(15,23,42,0.85);
-    backdrop-filter: blur(12px);
-    z-index: 1000;
+    background: #020617;
 }
 
 .nav a {
-    color: #cbd5f5;
-    margin-left: 25px;
+    color: #94a3b8;
+    margin-left: 20px;
     text-decoration: none;
-    font-size: 0.95em;
 }
 
 /* HERO */
 .hero {
     text-align: center;
-    padding: 180px 20px 120px;
-    animation: fadeIn 1.5s ease;
+    padding: 120px 20px 80px;
+    background: linear-gradient(135deg, #1e3a8a, #0f172a);
 }
 
 .hero h1 {
-    font-size: 4.2em;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 1.3em;
-    color: #cbd5f5;
+    font-size: 3.5em;
 }
 
 .button {
-    margin-top: 30px;
-    display: inline-block;
+    margin-top: 25px;
     background: #3b82f6;
-    padding: 14px 32px;
-    border-radius: 12px;
+    padding: 12px 28px;
+    border-radius: 10px;
+    display: inline-block;
     color: white;
     text-decoration: none;
-    transition: 0.3s;
 }
 
-.button:hover {
-    background: #2563eb;
-    transform: scale(1.05);
-}
-
-/* SECTIONS */
-.section {
-    padding: 100px 20px;
+/* DASHBOARD */
+.dashboard {
+    padding: 60px 20px;
     max-width: 1100px;
     margin: auto;
-    text-align: center;
 }
 
-/* CARDS */
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    justify-content: center;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
 }
 
 .card {
-    background: rgba(255,255,255,0.05);
-    padding: 30px;
-    border-radius: 18px;
-    width: 260px;
-    transition: 0.4s;
-}
-
-.card:hover {
-    transform: translateY(-10px) scale(1.03);
-    background: rgba(255,255,255,0.08);
-}
-
-/* IMAGE */
-.image-section img {
-    width: 100%;
-    max-width: 750px;
+    background: #020617;
+    padding: 25px;
     border-radius: 15px;
-    margin-top: 30px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border: 1px solid #1e293b;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #94a3b8;
+}
+
+.big {
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+/* FAKE CHART */
+.chart {
+    margin-top: 40px;
+    height: 200px;
+    background: linear-gradient(to top, #3b82f6, transparent);
+    border-radius: 10px;
+    opacity: 0.6;
 }
 
 /* CONTACT */
 .contact {
-    font-size: 1.2em;
-    color: #cbd5f5;
+    text-align: center;
+    padding: 80px 20px;
 }
 
 /* FOOTER */
 .footer {
     text-align: center;
-    padding: 50px;
-    color: #94a3b8;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(40px);}
-    to {opacity: 1; transform: translateY(0);}
+    padding: 40px;
+    color: #64748b;
 }
 </style>
 
@@ -133,64 +110,57 @@ body {
 <div class="nav">
     <div><strong>Stream Integrity</strong></div>
     <div>
-        <a href="#about">Über uns</a>
-        <a href="#features">Funktionen</a>
-        <a href="#tech">Technologie</a>
-        <a href="#contact">Kontakt</a>
+        <a href="#">Dashboard</a>
+        <a href="#">Analyse</a>
+        <a href="#">Kontakt</a>
     </div>
 </div>
 
 <div class="hero">
     <h1>Stream Integrity</h1>
-    <p>KI-gestützte Analyse von Streaming-Daten zur Erkennung von Bots und Manipulation</p>
-    <a href="#contact" class="button">Jetzt starten</a>
+    <p>Analyse & Erkennung von Streaming-Manipulation</p>
+    <a href="#dashboard" class="button">Dashboard ansehen</a>
 </div>
 
-<div class="section" id="about">
-    <h2>Über uns</h2>
-    <p>
-        Stream Integrity ist eine unabhängige Plattform zur Analyse von Streaming-Daten.
-        Wir decken Manipulationen, künstliche Reichweite und betrügerische Aktivitäten auf.
-        Unser Ziel ist Transparenz und Vertrauen im digitalen Raum.
-    </p>
-</div>
-
-<div class="section" id="features">
-    <h2>Unsere Funktionen</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Bot-Erkennung</h3>
-            <p>Erkennung von Fake-Views und automatisiertem Traffic.</p>
-        </div>
+<div class="dashboard" id="dashboard">
 
 ```
+<h2>Live Analyse</h2>
+
+<div class="grid">
     <div class="card">
-        <h3>Echtzeit-Analyse</h3>
-        <p>Live-Datenüberwachung von Streams und Plattformen.</p>
+        <h3>Gesamt Views</h3>
+        <div class="big">1,284,332</div>
     </div>
 
     <div class="card">
-        <h3>KI-Auswertung</h3>
-        <p>Intelligente Mustererkennung durch moderne Algorithmen.</p>
+        <h3>Verdächtige Aktivität</h3>
+        <div class="big">23%</div>
+    </div>
+
+    <div class="card">
+        <h3>Bot Traffic</h3>
+        <div class="big">312,991</div>
+    </div>
+
+    <div class="card">
+        <h3>Echte Nutzer</h3>
+        <div class="big">971,341</div>
     </div>
 </div>
+
+<div class="chart"></div>
 ```
 
 </div>
 
-<div class="section image-section" id="tech">
-    <h2>Technologie</h2>
-    <p>Unsere Plattform nutzt künstliche Intelligenz, Big Data und Verhaltensanalysen.</p>
-    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
-</div>
-
-<div class="section" id="contact">
+<div class="contact">
     <h2>Kontakt</h2>
-    <p class="contact">contact@stream-integrity.com</p>
+    <p>stream.integrity.review@proton.me</p>
 </div>
 
 <div class="footer">
-    © 2026 Stream Integrity — Alle Rechte vorbehalten
+    © 2026 Stream Integrity
 </div>
 
 </body>
