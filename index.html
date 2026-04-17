@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* NAV */
+/* NAVBAR */
 .nav {
     display: flex;
     justify-content: space-between;
@@ -23,26 +23,28 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
-    background: rgba(15,23,42,0.8);
-    backdrop-filter: blur(10px);
+    background: rgba(15,23,42,0.85);
+    backdrop-filter: blur(12px);
     z-index: 1000;
 }
 
 .nav a {
     color: #cbd5f5;
-    margin-left: 20px;
+    margin-left: 25px;
     text-decoration: none;
+    font-size: 0.95em;
 }
 
 /* HERO */
 .hero {
     text-align: center;
-    padding: 160px 20px 100px;
+    padding: 180px 20px 120px;
+    animation: fadeIn 1.5s ease;
 }
 
 .hero h1 {
-    font-size: 4em;
-    margin-bottom: 10px;
+    font-size: 4.2em;
+    margin-bottom: 15px;
 }
 
 .hero p {
@@ -54,8 +56,8 @@ body {
     margin-top: 30px;
     display: inline-block;
     background: #3b82f6;
-    padding: 14px 30px;
-    border-radius: 10px;
+    padding: 14px 32px;
+    border-radius: 12px;
     color: white;
     text-decoration: none;
     transition: 0.3s;
@@ -63,17 +65,18 @@ body {
 
 .button:hover {
     background: #2563eb;
+    transform: scale(1.05);
 }
 
 /* SECTIONS */
 .section {
     padding: 100px 20px;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
     text-align: center;
 }
 
-/* FEATURES */
+/* CARDS */
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -84,34 +87,42 @@ body {
 .card {
     background: rgba(255,255,255,0.05);
     padding: 30px;
-    border-radius: 15px;
+    border-radius: 18px;
     width: 260px;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px) scale(1.03);
     background: rgba(255,255,255,0.08);
 }
 
-/* IMAGE SECTION */
+/* IMAGE */
 .image-section img {
     width: 100%;
-    max-width: 700px;
+    max-width: 750px;
     border-radius: 15px;
     margin-top: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 /* CONTACT */
 .contact {
     font-size: 1.2em;
+    color: #cbd5f5;
 }
 
 /* FOOTER */
 .footer {
     text-align: center;
-    padding: 40px;
+    padding: 50px;
     color: #94a3b8;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(40px);}
+    to {opacity: 1; transform: translateY(0);}
 }
 </style>
 
@@ -122,45 +133,45 @@ body {
 <div class="nav">
     <div><strong>Stream Integrity</strong></div>
     <div>
-        <a href="#about">About</a>
-        <a href="#features">Features</a>
-        <a href="#tech">Technology</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">Über uns</a>
+        <a href="#features">Funktionen</a>
+        <a href="#tech">Technologie</a>
+        <a href="#contact">Kontakt</a>
     </div>
 </div>
 
 <div class="hero">
     <h1>Stream Integrity</h1>
-    <p>AI-powered detection of fraud, bots and manipulation in streaming data</p>
-    <a href="#contact" class="button">Work with us</a>
+    <p>KI-gestützte Analyse von Streaming-Daten zur Erkennung von Bots und Manipulation</p>
+    <a href="#contact" class="button">Jetzt starten</a>
 </div>
 
 <div class="section" id="about">
-    <h2>About Us</h2>
+    <h2>Über uns</h2>
     <p>
-        We provide independent, data-driven insights into streaming ecosystems.
-        Our mission is to uncover manipulation, detect artificial engagement,
-        and bring transparency back to digital platforms.
+        Stream Integrity ist eine unabhängige Plattform zur Analyse von Streaming-Daten.
+        Wir decken Manipulationen, künstliche Reichweite und betrügerische Aktivitäten auf.
+        Unser Ziel ist Transparenz und Vertrauen im digitalen Raum.
     </p>
 </div>
 
 <div class="section" id="features">
-    <h2>Core Capabilities</h2>
+    <h2>Unsere Funktionen</h2>
     <div class="cards">
         <div class="card">
-            <h3>Bot Detection</h3>
-            <p>Advanced algorithms to identify fake traffic and automated behavior.</p>
+            <h3>Bot-Erkennung</h3>
+            <p>Erkennung von Fake-Views und automatisiertem Traffic.</p>
         </div>
 
 ```
     <div class="card">
-        <h3>Real-Time Monitoring</h3>
-        <p>Live tracking of anomalies across platforms.</p>
+        <h3>Echtzeit-Analyse</h3>
+        <p>Live-Datenüberwachung von Streams und Plattformen.</p>
     </div>
 
     <div class="card">
-        <h3>Data Intelligence</h3>
-        <p>Deep analytics and pattern recognition.</p>
+        <h3>KI-Auswertung</h3>
+        <p>Intelligente Mustererkennung durch moderne Algorithmen.</p>
     </div>
 </div>
 ```
@@ -168,18 +179,18 @@ body {
 </div>
 
 <div class="section image-section" id="tech">
-    <h2>Technology</h2>
-    <p>Powered by AI, big data analysis and behavioral modeling.</p>
-    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="Data analysis">
+    <h2>Technologie</h2>
+    <p>Unsere Plattform nutzt künstliche Intelligenz, Big Data und Verhaltensanalysen.</p>
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
 </div>
 
 <div class="section" id="contact">
-    <h2>Contact</h2>
+    <h2>Kontakt</h2>
     <p class="contact">contact@stream-integrity.com</p>
 </div>
 
 <div class="footer">
-    © 2026 Stream Integrity — All rights reserved
+    © 2026 Stream Integrity — Alle Rechte vorbehalten
 </div>
 
 </body>
